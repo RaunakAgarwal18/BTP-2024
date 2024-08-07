@@ -11,15 +11,11 @@
 clc
 clear
 close all
-Fun_name='Production Planning Problem';    % number of test functions: 'F1' to 'F23'
+Fun_name='F22';    % number of test functions: 'F1' to 'F23'
 SearchAgents=16;                           % number of Hippopotamus (population members)
 Max_iterations=500;                        % maximum number of iteration
-% [lowerbound,upperbound,dimension,fitness]=fun_info(Fun_name);                     % Object function
-[product,l,m,h,il,im,ih,cl,cm,ch,SP,rm1,rm2,rm3,nProcess] = ProductionPlanningData;
-fitness = @SKS_ProductionPlanning;
-dimension=length(l);
-lowerbound = zeros(1,dimension);
-upperbound = h';
+[lowerbound,upperbound,dimension,fitness]=fun_info(Fun_name);                     % Object function
+
 [Best_score,Best_pos,HO_curve]=HO(SearchAgents,Max_iterations,lowerbound,upperbound,dimension,fitness);
 
 display(['The best solution obtained by HO for ' [num2str(Fun_name)],'  is : ', num2str(Best_pos)]);

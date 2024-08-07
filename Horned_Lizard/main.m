@@ -11,11 +11,11 @@
 clear
 clc
 format long
-i=50;  % number of executions
+i=5;  % number of executions
 a=zeros(i,1);
 SearchAgents_no=30;  
 Function_name= 0;
-Max_iteration=200; 
+Max_iteration=50; 
 [lb,ub,dim,fobj]=GetFunction(Function_name);
 v= zeros(i,dim);
 cc= zeros(i,Max_iteration);   % convergence curve
@@ -30,13 +30,16 @@ end
 theBestVct = v(minIdx,:);
 ConvergenceC= cc(minIdx,:);
 
+disp(min(ConvergenceC));
 % Plot the convergence curve for the best run
 figure;
 plot(ConvergenceC, 'LineWidth', 2);
+axis auto;
 title('Convergence Curve');
 xlabel('Iteration');
 ylabel('Fitness Value');
-grid on;
+% grid on;
+% axis([0 800 -600 1e24]);
 
 
 display(['The best solution obtained by HLOA is: ', num2str(theBestVct)]);

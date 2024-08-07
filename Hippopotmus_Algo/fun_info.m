@@ -2,6 +2,12 @@ function [lowerbound,upperbound,dimension,fitness] = fun_info(F)
 
 
 switch F
+    case 'PPP'
+        [product,l,m,h,il,im,ih,cl,cm,ch,SP,rm1,rm2,rm3,nProcess] = ProductionPlanningData;
+        fitness = @SKS_ProductionPlanning;
+        dimension=length(l);
+        lowerbound = zeros(1,dimension);
+        upperbound = h';
     case 'F1'
         fitness = @F1;
         lowerbound=-100;
