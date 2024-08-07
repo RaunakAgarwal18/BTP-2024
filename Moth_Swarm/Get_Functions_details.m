@@ -19,6 +19,13 @@ function [lb,ub,dim,fobj] = Get_Functions_details(F)
 
 
 switch F
+    case 'PPP'
+        [product,l,m,h,il,im,ih,cl,cm,ch,SP,rm1,rm2,rm3,nProcess] = ProductionPlanningData;
+        fobj = @SKS_ProductionPlanning;
+        dim=length(l);
+        lb = zeros(1,dim);
+        ub = h';
+
     case 'F1'
         fobj = @F1;
         lb=-100;
