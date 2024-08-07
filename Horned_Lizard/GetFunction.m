@@ -4,6 +4,13 @@ function [lb,ub,dim,fobj] = GetFunction(F)
 
 
 switch F
+    case 0
+        fobj = @SKS_ProductionPlanning;
+        [product,l,m,h,il,im,ih,cl,cm,ch,SP,rm1,rm2,rm3,nProcess] = ProductionPlanningData;
+        dim=length(l);
+        lb = zeros(1,dim);
+        ub = h';
+
     case 1
         fobj = @F1;
         lb=-100;     

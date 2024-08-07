@@ -14,14 +14,9 @@ format long
 i=50;  % number of executions
 a=zeros(i,1);
 SearchAgents_no=30;  
-Function_name= 1;
+Function_name= 0;
 Max_iteration=200; 
-% [lb,ub,dim,fobj]=GetFunction(Function_name);
-fobj = @SKS_ProductionPlanning;
-[product,l,m,h,il,im,ih,cl,cm,ch,SP,rm1,rm2,rm3,nProcess] = ProductionPlanningData;
-dim=length(l);
-lb = zeros(1,dim);
-ub = h';
+[lb,ub,dim,fobj]=GetFunction(Function_name);
 v= zeros(i,dim);
 cc= zeros(i,Max_iteration);   % convergence curve
 for m=1:i

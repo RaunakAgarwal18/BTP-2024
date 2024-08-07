@@ -8,15 +8,12 @@
 %% Email: nima.khodadadi@miami.edu, Website: https://nimakhodadadi.com
 
 
-
-
-
 clc
 clear
 close all
-Fun_name='F2';                     % number of test functions: 'F1' to 'F23'
-SearchAgents=16;                     % number of Hippopotamus (population members)
-Max_iterations=500;                     % maximum number of iteration
+Fun_name='Production Planning Problem';    % number of test functions: 'F1' to 'F23'
+SearchAgents=16;                           % number of Hippopotamus (population members)
+Max_iterations=500;                        % maximum number of iteration
 % [lowerbound,upperbound,dimension,fitness]=fun_info(Fun_name);                     % Object function
 [product,l,m,h,il,im,ih,cl,cm,ch,SP,rm1,rm2,rm3,nProcess] = ProductionPlanningData;
 fitness = @SKS_ProductionPlanning;
@@ -28,11 +25,18 @@ upperbound = h';
 display(['The best solution obtained by HO for ' [num2str(Fun_name)],'  is : ', num2str(Best_pos)]);
 display(['The best optimal value of the objective funciton found by HO  for ' [num2str(Fun_name)],'  is : ', num2str(Best_score)]);
 
-figure=gcf;
-semilogy(HO_curve,'Color','#b28d90','LineWidth',2)
+% figure=gcf;
+% semilogy(HO_curve,'Color','#b28d90','LineWidth',2)
+% xlabel('Iteration');
+% ylabel('Best score obtained so far');
+% box on
+% set(findall(figure,'-property','FontName'),'FontName','Times New Roman')
+% legend('HO')
+
+figure;
+plot(HO_curve, 'LineWidth', 2);
+title('Convergence Curve');
 xlabel('Iteration');
-ylabel('Best score obtained so far');
-box on
-set(findall(figure,'-property','FontName'),'FontName','Times New Roman')
-legend('HO')
+ylabel('Fitness Value');
+grid on;
 
