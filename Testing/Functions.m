@@ -1,4 +1,4 @@
-function [lowerbound,upperbound,dimension,fitness] = fun_info(F)
+function [lowerbound,upperbound,dimension,fitness] = Get_Function(F)
 
 
 switch F

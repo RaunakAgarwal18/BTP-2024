@@ -9,10 +9,12 @@
 %_______________________________________________________________________________________________
 
 %  Moth Swarm Algorithm (MSA)                                                            
-function [Best_pos,Best_score,Convergence_curve]=MSA(SearchAgents_no,Nc,G,ub,lb,d,fobj)
+function [Best_score,Best_pos,Convergence_curve]=MSA(SearchAgents_no,G,lb,ub,d,fobj)
+Nc = SearchAgents_no/5;
 %Initialize the fitnesses and positions of moths
-[Moth_pos,Moth_fitness]=initialization(SearchAgents_no,d,ub,lb,fobj);
-[Moth_fitness,location]=sort(Moth_fitness);Moth_pos=Moth_pos(location,:);
+[Moth_pos,Moth_fitness]=initialization(SearchAgents_no,d,lb,ub,fobj);
+[Moth_fitness,location]=sort(Moth_fitness);
+Moth_pos=Moth_pos(location,:);
 Convergence_curve=inf*ones(1,G-1);
 g=1;                              % Loop counter
 % Main loop

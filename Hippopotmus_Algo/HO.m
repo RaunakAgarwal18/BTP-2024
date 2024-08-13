@@ -127,7 +127,7 @@ for t=1:Max_iterations
 
     end
     best_so_far(t)=fbest;
-    disp(['Iteration ' num2str(t) ': Best Cost = ' num2str(best_so_far(t))]);
+    % disp(['Iteration ' num2str(t) ': Best Cost = ' num2str(best_so_far(t))]);
 
 
     Best_score=fbest;

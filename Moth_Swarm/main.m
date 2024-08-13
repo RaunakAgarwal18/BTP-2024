@@ -28,12 +28,12 @@
  end                                % Maximum number of iterations
 
  SearchAgents_no=30;% Number of search agents
- Nc=6;% Number of Pathfinders: 4 <=  Nc  <= 20% of SearchAgents_no
+ % Nc=6;% Number of Pathfinders: 4 <=  Nc  <= 20% of SearchAgents_no
 
  % Load details of the selected benchmark function
  [lb,ub,dim,fobj]=Get_Functions_details(F);
  
- [Best_pos,Best_score,Convergence_curve]=MSA(SearchAgents_no,Nc,Max_iteration,ub,lb,dim,fobj);
+ [Best_pos,Best_score,Convergence_curve]=MSA(SearchAgents_no,Max_iteration,lb,ub,dim,fobj);
  
 %Draw and display objective function
 arr = 1:1:Max_iteration-1;

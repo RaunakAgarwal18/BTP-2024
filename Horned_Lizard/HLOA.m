@@ -10,7 +10,7 @@
 %_________________________________________________________________________%
 function [vMin,theBestVct,Convergence_curve]=HLOA(SearchAgents_no,Max_iter,lb,ub,dim,fobj)
 
-Positions=initialization(SearchAgents_no,dim,ub,lb); % Position - searchAgentNo. * dim (no. of decision variables)
+Positions=initialization_HLOA(SearchAgents_no,dim,ub,lb); % Position - searchAgentNo. * dim (no. of decision variables)
 
 Fitness = zeros(SearchAgents_no,1);
 for i=1:size(Positions,1)
