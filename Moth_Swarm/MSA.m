@@ -18,7 +18,7 @@ Moth_pos=Moth_pos(location,:);
 Convergence_curve=inf*ones(1,G-1);
 g=1;                              % Loop counter
 % Main loop
-while g<G 
+while g<=G 
     pMoth_pos = Moth_pos;
     pMoth_fitness = Moth_fitness; 
 
@@ -114,8 +114,8 @@ while g<G
     Convergence_curve(g)=Best_score;
        
     % Display the iteration and best optimum obtained so far
-    if mod(g,50)==0 
-        display(['At iteration: ', num2str(g), ' Best fitness is: ', num2str(Best_score)]);
-    end
+    % if mod(g,50)==0 
+    %     display(['At iteration: ', num2str(g), ' Best fitness is: ', num2str(Best_score)]);
+    % end
     g=g+1; 
 end
