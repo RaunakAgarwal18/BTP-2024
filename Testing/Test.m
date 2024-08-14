@@ -2,11 +2,11 @@ clc
 clear                   
 SearchAgents=30;                        
 Max_iterations=50;
-best_fitness = zeros(23,3); % 1 - Ho, 2 - HLOA, 3 - MSA
+best_fitness = inf(23,3); % 1 - Ho, 2 - HLOA, 3 - MSA
 best_convergence = zeros(23,3,Max_iterations);
 % figure;
 for i = 1:23                       
-    [lowerbound,upperbound,dimension,fitness]=Functions(i);                     % Object function
+    [lowerbound,upperbound,dimension,fitness] = Functions(i);                     % Object function
     for j = 1:30
         [Best_score_HO,Best_pos_HO,HO_curve]=HO(SearchAgents,Max_iterations,lowerbound,upperbound,dimension,fitness);
         [Best_score_HLOA,Best_pos_HLOA,HLOA_curve]=HLOA(SearchAgents,Max_iterations,lowerbound,upperbound,dimension,fitness);
