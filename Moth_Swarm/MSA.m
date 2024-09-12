@@ -9,7 +9,7 @@
 %_______________________________________________________________________________________________
 
 %  Moth Swarm Algorithm (MSA)                                                            
-function [Best_score,Best_pos,Convergence_curve]=MSA(SearchAgents_no,G,lb,ub,d,fobj)
+function [Best_score,Best_pos,Convergence_curve]=MSA(SearchAgents_no,G,lb,ub,d,fobj) % G -> Max number of iteration, d -> no. of decision variable
 Nc = SearchAgents_no/5;
 %Initialize the fitnesses and positions of moths
 [Moth_pos,Moth_fitness]=initialization(SearchAgents_no,d,lb,ub,fobj);
@@ -25,7 +25,7 @@ while g<=G
     %____________________ 1. Reconnaissance phase : Pathfinder moths ____________________________________________________    
     
     Lights=Moth_pos(1:Nc,:);   
-    Light_fitness=Moth_fitness(1:Nc);      % best moths considered to be pathfinders
+    Light_fitness=Moth_fitness(1:Nc);      % best moths considered to be pathfinders, Moth_fitness is sorted in ascending order
     
     [Lights,Light_fitness] = Pathfinders(Lights,Light_fitness,Nc,fobj,ub,lb); % improve pathfinders
     

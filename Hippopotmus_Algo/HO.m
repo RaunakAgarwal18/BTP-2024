@@ -29,7 +29,7 @@ for t=1:Max_iterations
     for i=1:SearchAgents/2
 
         %% Phase1: The hippopotamuses position update in the river or pond (Exploration)
-        Dominant_hippopotamus=Xbest;
+        Dominant_hippopotamus=Xbest
         I1=randi([1,2],1,1);
         I2=randi([1,2],1,1);
         Ip1=randi([0,1],1,2);
@@ -37,7 +37,7 @@ for t=1:Max_iterations
         RandGroup=randperm(SearchAgents,RandGroupNumber);
 
         % Mean of Random Group
-        MeanGroup=mean(X(RandGroup,:)).*(length(RandGroup)~=1)+X(RandGroup(1,1),:)*(length(RandGroup)==1);
+        MeanGroup=mean(X(RandGroup,:)).*(length(RandGroup)~=1)+X(RandGroup(1,1),:)*(isscalar(RandGroup));
         Alfa{1,:}=(I2*rand(1,dimension)+(~Ip1(1)));
         Alfa{2,:}= 2*rand(1,dimension)-1;
         Alfa{3,:}= rand(1,dimension);
