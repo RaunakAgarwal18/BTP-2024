@@ -1,5 +1,5 @@
 %%% Designed and Developed by Mohammad Dehghani %%%
-function[Best_score,Best_pos,FLO_curve]=FLO(SearchAgents,Max_iterations,lowerbound,upperbound,dimension,fitness)
+function[Best_score,Best_pos,FLO_curve]=FLO_Updated(SearchAgents,Max_iterations,lowerbound,upperbound,dimension,fitness)
 lowerbound=ones(1,dimension).*(lowerbound);                              % Lower limit for variables
 upperbound=ones(1,dimension).*(upperbound);                              % Upper limit for variables
 
